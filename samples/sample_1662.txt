@@ -1,0 +1,1 @@
+"The table below lists all of the currently-defined algebraic types in Haskell.\n\nIf you are looking for the list of numeric types, see Numeric types.\n\nIf you are looking for the list of list-like types, see List-like types.

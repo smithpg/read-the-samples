@@ -1,0 +1,1 @@
+"<!-- this is a comment, this is also a comment, and so is this -->\n\n<!-- this is a comment, this is also a comment, and so is this -->\n\n−\n\n<!-- a document fragment, which is part of the document, but a complete piece on its own -->\n\n+

@@ -1,0 +1,1 @@
+Understanding the User Experience is an application I made to help me grasp the fundamentals of UX design. The main tool to complete the process of interaction design. By presenting each topic with a questionnaire and a poll, the user gets a sense of what UX designers do and how they can help.

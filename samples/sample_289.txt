@@ -1,0 +1,1 @@
+Hello.\n\nI have been trying to download the RPM of a file that resides on a university FTP server. I can download files with wget and ftp, but not with rpm. The file is a tar file. I want to be able to download it with rpm. Is this possible?\n\nThanks!

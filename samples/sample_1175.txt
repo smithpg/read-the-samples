@@ -1,0 +1,1 @@
+Yes, you can!\n\nSetting the button in the background for only to be visible after an interaction is a great option to display buttons. For example, we could add a button to the background and make it visible when a user clicks on the slider.\n\nThe following example shows how to add a button to the slider and configure it to be visible only when the slider is clicked:

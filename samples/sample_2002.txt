@@ -1,0 +1,1 @@
+"You can look into the Issue Tracker and report your own issues to make sure they don't get lost, in case your host provider hasn't registered your issue yet.\n\nThe other way to find your issue is by looking at the Git Log to find out what commit and push to which branch created your issue.

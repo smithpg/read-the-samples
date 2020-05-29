@@ -1,0 +1,1 @@
+* Clocks now just-works, including:\n\n- Windows 2000 through 10\n\n- X86 and X64\n\n- Debian, Gentoo, Arch Linux, Ubuntu, Fedora, openSUSE\n\n- Windows Server 2008R2 through Server 2012R2\n\n- Windows Phone 7 and 8\n\n"

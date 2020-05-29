@@ -1,0 +1,1 @@
+All Implemented Interfaces: org.apache.hadoop.ipc.RpcEngine\n\npublic class RpcEngineImpl extends Object implements org.apache.hadoop.ipc.RpcEngine\n\nAn engine for handling Rpc calls using the standard Rpc interfaces. An engine instance should be used by the client that makes the call.

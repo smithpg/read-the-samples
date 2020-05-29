@@ -1,0 +1,1 @@
+I want to replace an array element with another value.\n\nFor example if I have:\n\nvar arr = ['foo', 'bar', 'baz'];\n\nHow can I replace the value at index 0 with another value?\n\nI have tried the following but it doesn't work. I am new to this syntax so please feel free to help me out.\n\narr = arr.replace(0, 'foo');

@@ -1,0 +1,1 @@
+I love google chrome's ability to store passwords and usernames.\n\nBut it only works on "http" sites. I often use many other types of internet links, which would be useful to store credentials for.\n\nIs there a way to store and retrieve passwords on all types of web addresses?
