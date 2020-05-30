@@ -1,5 +1,5 @@
 button {
-  background: none;
+  background: white;
   transform: translateY(0px);
   border: 1px solid rgba(0, 0, 0, 0.3);
   transition: transform 200ms;
@@ -29,4 +29,16 @@ button:hover {
   );
   margin: 20px auto;
   border: none;
+}
+
+#navigator {
+  display: flex;
+  margin: 0px auto;
+  justify-content: center;
+  position: sticky;
+  top: 10px;
+}
+
+#navigator button {
+  margin-right: 3px;
 }

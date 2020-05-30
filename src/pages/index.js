@@ -1,8 +1,9 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { navigate } from "@reach/router"
+import useNavigator from "../hooks/useNavigator"
 
 import Layout from "../components/layout"
+import RandomButton from "../components/randomButton"
 import "./index.css"
 
 const IndexPage = () => {
@@ -25,10 +26,6 @@ const IndexPage = () => {
     return { path: node.name, number: node.fields.sampleNumber }
   })
 
-  function getRandomSamplePath() {
-    return `/${samples[Math.floor(Math.random() * samples.length)].path}`
-  }
-
   const linkContainerStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
@@ -41,9 +38,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <h3>All Samples sourced from OpenAI/GPT-3/175b_samples.jsonl</h3>
-      <button onClick={() => navigate(getRandomSamplePath())} id="random">
-        View a random sample
-      </button>
+      <RandomButton />
       <div style={linkContainerStyle}>
         {samples.map(s => (
           <SampleLink sample={s} key={s.number} />
@@ -54,8 +49,10 @@ const IndexPage = () => {
 }
 
 function SampleLink({ sample }) {
+  const { select } = useNavigator()
+
   return (
-    <button onClick={() => navigate(`/${sample.path}`)}>
+    <button onClick={() => select(sample.number)}>
       Sample #{sample.number}
     </button>
   )
