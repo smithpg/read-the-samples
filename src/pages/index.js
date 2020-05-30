@@ -3,8 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { navigate } from "@reach/router"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import "./index.css"
 
 const IndexPage = () => {
   const res = useStaticQuery(graphql`
@@ -13,39 +12,52 @@ const IndexPage = () => {
         edges {
           node {
             name
+            fields {
+              sampleNumber
+            }
           }
         }
       }
     }
   `)
 
-  const paths = res.allFile.edges.map(e => e.node.name)
+  const samples = res.allFile.edges.map(({ node }) => {
+    return { path: node.name, number: node.fields.sampleNumber }
+  })
 
   function getRandomSamplePath() {
-    return `/${paths[Math.floor(Math.random() * paths.length)]}`
+    return `/${samples[Math.floor(Math.random() * samples.length)].path}`
+  }
+
+  const linkContainerStyle = {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gridGap: 5,
+    "& > button": {
+      background: "white",
+    },
   }
 
   return (
     <Layout>
-      <h1>All Samples from OpenAI/GPT-3/175b_samples.jsonl</h1>
-      <button onClick={() => navigate(getRandomSamplePath())}>
+      <h3>All Samples sourced from OpenAI/GPT-3/175b_samples.jsonl</h3>
+      <button onClick={() => navigate(getRandomSamplePath())} id="random">
         View a random sample
       </button>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {paths.map(path => (
-          <span
-            key={path}
-            style={{
-              border: "1px solid rgba(0,0,0,0.3)",
-              borderRadius: 5,
-              padding: 5,
-            }}
-          >
-            <Link to={`/${path}`}>{path}</Link>
-          </span>
+      <div style={linkContainerStyle}>
+        {samples.map(s => (
+          <SampleLink sample={s} key={s.number} />
         ))}
       </div>
     </Layout>
+  )
+}
+
+function SampleLink({ sample }) {
+  return (
+    <button onClick={() => navigate(`/${sample.path}`)}>
+      Sample #{sample.number}
+    </button>
   )
 }
 

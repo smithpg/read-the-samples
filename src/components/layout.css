@@ -220,6 +220,10 @@ img {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
+* {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
 h1 {
   margin-left: 0;
   margin-right: 0;

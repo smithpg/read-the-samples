@@ -19,18 +19,6 @@ exports.onCreateNode = ({ node, actions }) => {
       name: "sampleNumber",
       value: Number(node.name.match(/0|([1-9][0-9]*)/)[0]),
     })
-    // [
-    //   {
-    //     node,
-    //     name: "text",
-    //     value: fs.readFileSync(node.absolutePath).toString(),
-    //   },
-    //   {
-    //     node,
-    //     name: "sampleNumber",
-    //     value: Number(node.name.match(/0|([1-9][0-9]*)/)[0]),
-    //   },
-    // ].forEach(actions.createNodeField)
   }
 }
 
@@ -47,6 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
               name
               fields {
                 text
+                sampleNumber
               }
             }
           }
@@ -63,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
       const {
         node: {
           name,
-          fields: { text },
+          fields: { text, sampleNumber },
         },
       } = edge
 
@@ -72,6 +61,8 @@ exports.createPages = ({ graphql, actions }) => {
         component: sampleTemplate,
         context: {
           text,
+          number: sampleNumber,
+          test: 5,
         },
       })
     })
